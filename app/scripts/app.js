@@ -20,6 +20,15 @@
           controllerAs: 'ctrl',
           title: title('Search')
         })
+        .when('/product/:productId',{
+              templateUrl:'views/product.html',
+              controller:'ProductController',
+              resolve:{
+                  product: ['$route', '$http', function ($route, $http) {
+
+                  }]
+              }
+          })
         .otherwise({
            redirectTo: '/'
          });
