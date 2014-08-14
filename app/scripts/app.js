@@ -20,12 +20,14 @@
           controllerAs: 'ctrl',
           title: title('Search')
         })
-        .when('/product/:productId',{
-              templateUrl:'views/product.html',
-              controller:'ProductController',
-              resolve:{
-                  product: ['$route', '$http', function ($route, $http) {
-
+        .when('/product/:productId', {
+              templateUrl: 'views/product.html',
+              controller: 'ProductController',
+              title: title('Product Details'),
+              resolve: {
+                  product: ['$route', 'ProductService', function ($route, productService) {
+                      var productId = parseInt($route.current.params.productId);
+                      return productService.getProductById(productId);
                   }]
               }
           })
