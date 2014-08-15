@@ -24,6 +24,7 @@
               templateUrl: 'views/product.html',
               controller: 'ProductController',
               title: title('Product Details'),
+              controllerAs: 'ctrl',
               resolve: {
                   product: ['$route', 'ProductService', function ($route, productService) {
                       var productId = parseInt($route.current.params.productId);
