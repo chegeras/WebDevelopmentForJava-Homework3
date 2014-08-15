@@ -33,25 +33,10 @@
     </div>
 
     <div class="col-sm-6 col-lg-7">
-        <div>
+        <div style="padding-left: 15px">
             <auction-product-title></auction-product-title>
         </div>
-        <div class="col-sm-12 col-md-9">
-            <h4><b>Current Price</b>: {{ ctrl.product.price | currency }} [5&nbsp;bids]</h4>
-            <p>
-                <b>Time left</b>: {{ ctrl.product.timeleft }}h
-            </p>
-        </div>
-        <div class="col-sm-12 col-md-3">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <input type="text" class="form-control" value="">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-default btn-block btn-primary">Place bid</button>
-                </div>
-            </form>
-        </div>
+        <auction-bids></auction-bids>
 
         <div class="col-xs-12"><b>Item's description</b>:  {{ ctrl.product.description }}
         </div>

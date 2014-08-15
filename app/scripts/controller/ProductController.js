@@ -6,6 +6,7 @@
 
     var ProductController = function(product){
         this.product = product
+        this.date = "Today " + new Date().toLocaleTimeString().slice(0,5);
     };
 
     ProductController.$inject = ['product'];
